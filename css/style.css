@@ -1,0 +1,27 @@
+@import "reset.css";
+@import "header.css";
+@import "main.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+body[data-theme="dark"] {
+  color: #cfcfcf;
+  background-color: #0f1421;
+}
