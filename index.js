@@ -93,3 +93,15 @@ const getMode = () => {
   });
 };
 getMode();
+
+const getNote = () => {
+  const App = document.querySelector(".App");
+  const note = document.createElement("div");
+
+  note.classList.add("note");
+  note.innerText = "Note";
+
+  App.appendChild(note);
+};
+
+getNote();

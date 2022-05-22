@@ -18,3 +18,17 @@
   color: white;
   border: 1px solid #272b38;
 }
+
+.note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.input {
+  background-color: var(--border-ligth);
+  border: none;
+  border-radius: 10%;
+}
