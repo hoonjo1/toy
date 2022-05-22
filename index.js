@@ -26,16 +26,21 @@ checkMode();
 
 const getMode = () => {
   const btn = document.querySelector(".toggle-btn");
+  const back = document.querySelector(".back");
   const body = document.querySelector("body");
   const App = document.querySelector(".App");
   btn.addEventListener("click", () => {
     if (body.dataset.theme == "dark") {
       delete body.dataset.theme;
       delete App.dataset.theme;
+      back.classList.remove("border-dark");
+      back.classList.add("border-light");
       localStorage.setItem("mode", "light");
     } else {
       body.dataset.theme = "dark";
       App.dataset.theme = "dark";
+      back.classList.remove("border-light");
+      back.classList.add("border-dark");
       localStorage.setItem("mode", "dark");
     }
   });

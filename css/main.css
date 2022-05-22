@@ -10,7 +10,7 @@
   width: 100%;
   padding-bottom: 100%;
   background-color: rgba(232, 232, 232);
-  border: 1px solid #dedede;
+  border: 1px solid var(--border-ligth);
 }
 
 .App[data-theme="dark"] {
