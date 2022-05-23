@@ -104,8 +104,8 @@ const getDotSide = () => {
   noteBtn.classList.add("note-btn");
   testBtn.classList.add("test-btn");
   clockBtn.classList.add("clock-btn");
-
   modeBox.classList.add("mode-btn");
+
   modeBox.appendChild(noteBtn);
   modeBox.appendChild(testBtn);
   modeBox.appendChild(clockBtn);
@@ -114,29 +114,36 @@ const getDotSide = () => {
 };
 getDotSide();
 
+const getClickMode = () => {
+  const App = document.querySelector(".App");
+  const clock = document.createElement("span");
+
+  const date = new Date();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  clock.innerText = clock.innerText = `${hours}:${minutes}`;
+
+  App.appendChild(clock);
+};
+
 const getDotMode = () => {
-  const modeBox = document.querySelector(".mode-btn");
   const noteBtn = document.querySelector(".note-btn");
   const testBtn = document.querySelector(".test-btn");
   const clockBtn = document.querySelector(".clock-btn");
 
-  clockBtn.addEventListener("click", () => {
-    console.log("clock");
+  noteBtn.addEventListener("click", () => {
+    console.log("note");
   });
+
+  testBtn.addEventListener("click", () => {
+    console.log("test");
+  });
+
+  clockBtn.addEventListener("click", getClickMode);
 };
 
 getDotMode();
-
-const get = () => {
-  const App = document.querySelector(".App");
-  const clockBox = document.createElement("div");
-  const clock = document.createElement("span");
-
-  clock.innerText = "clock";
-
-  clockBox.classList.add("clock-box");
-  clockBox.appendChild(clock);
-};
 
 // const getNote = () => {
 //   const App = document.querySelector(".App");
