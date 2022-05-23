@@ -60,14 +60,16 @@ const switchingTheme = (isDark) => {
     App.dataset.theme = "dark";
     back.classList.remove("border-light");
     back.classList.add("border-dark");
-    console.log("참");
+    localStorage.setItem("mode", "dark");
+    console.log("true");
   }
   if (!isDark) {
     delete body.dataset.theme;
     delete App.dataset.theme;
     back.classList.remove("border-dark");
     back.classList.add("border-light");
-    console.log("거짓");
+    localStorage.setItem("mode", "light");
+    console.log("false");
   }
 };
 
@@ -85,23 +87,98 @@ const getMode = () => {
   btn.addEventListener("click", () => {
     if (body.dataset.theme === "dark") {
       switchingTheme(false);
-      localStorage.setItem("mode", "light");
     } else {
       switchingTheme(true);
-      localStorage.setItem("mode", "dark");
     }
   });
 };
 getMode();
 
-const getNote = () => {
+const getDotSide = () => {
   const App = document.querySelector(".App");
-  const note = document.createElement("div");
+  const modeBox = document.createElement("div");
+  const noteBtn = document.createElement("button");
+  const testBtn = document.createElement("button");
+  const clockBtn = document.createElement("button");
 
-  note.classList.add("note");
-  note.innerText = "Note";
+  noteBtn.classList.add("note-btn");
+  testBtn.classList.add("test-btn");
+  clockBtn.classList.add("clock-btn");
 
-  App.appendChild(note);
+  modeBox.classList.add("mode-btn");
+  modeBox.appendChild(noteBtn);
+  modeBox.appendChild(testBtn);
+  modeBox.appendChild(clockBtn);
+
+  App.appendChild(modeBox);
+};
+getDotSide();
+
+const getDotMode = () => {
+  const modeBox = document.querySelector(".mode-btn");
+  const noteBtn = document.querySelector(".note-btn");
+  const testBtn = document.querySelector(".test-btn");
+  const clockBtn = document.querySelector(".clock-btn");
+
+  clockBtn.addEventListener("click", () => {
+    console.log("clock");
+  });
 };
 
-getNote();
+getDotMode();
+
+const get = () => {
+  const App = document.querySelector(".App");
+  const clockBox = document.createElement("div");
+  const clock = document.createElement("span");
+
+  clock.innerText = "clock";
+
+  clockBox.classList.add("clock-box");
+  clockBox.appendChild(clock);
+};
+
+// const getNote = () => {
+//   const App = document.querySelector(".App");
+//   const note = document.createElement("div");
+
+//   const seleteBtn = document.createElement("div");
+//   const createBtn = document.createElement("button");
+//   const removeBtn = document.createElement("button");
+
+//   note.classList.add("note");
+//   note.innerText = "";
+
+//   seleteBtn.classList.add("selete-btn");
+
+//   removeBtn.classList.add("remove-btn");
+//   createBtn.classList.add("create-btn");
+//   removeBtn.innerText = "Remove";
+//   createBtn.innerText = "Create";
+
+//   App.appendChild(note);
+//   App.appendChild(seleteBtn);
+
+//   seleteBtn.appendChild(removeBtn);
+//   seleteBtn.appendChild(createBtn);
+// };
+
+// getNote();
+
+// const getTest = () => {
+//   const App = document.querySelector(".App");
+//   const divTest = document.createElement("div");
+//   const createBtn = document.querySelector(".create-btn");
+//   const removeBtn = document.querySelector(".remove-btn");
+
+//   createBtn.addEventListener("click", () => {
+//     divTest.innerText = "생성";
+//     App.appendChild(divTest);
+//   });
+
+//   removeBtn.addEventListener("click", () => {
+//     App.removeChild(divTest);
+//   });
+// };
+
+// getTest();
