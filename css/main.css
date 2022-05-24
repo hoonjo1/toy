@@ -1,16 +1,8 @@
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  flex: 1;
+  align-items: center;
   border-radius: 10%;
   width: 100%;
   height: 100%;
@@ -25,56 +17,26 @@
   border: 1px solid #272b38;
 }
 
-.mode-btn {
+.view-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.section-btn {
   display: grid;
   grid-auto-columns: 10px;
   grid-auto-flow: column;
   grid-gap: 8px;
-  z-index: 20;
 }
-
-.mode-btn button {
+.section-btn button {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 0;
-}
-
-.note {
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.input {
-  background-color: var(--border-ligth);
   border: none;
-  border-radius: 10%;
-}
-
-.selete-btn {
-  height: 10vh;
-}
-
-.selete-btn button {
-  color: white;
-  margin: 30px 30px;
-  font-size: 12px;
-  padding: 0;
-  border: 0.5px solid rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  padding: 8px 18px;
-  border-radius: 20px;
-}
-
-.selete-btn button:hover {
-  border: 0.5px solid white;
-}
-
-.create-btn {
-  background-color: #004fff;
-}
-.remove-btn {
-  background-color: #eb5373;
+  border-radius: 50%;
 }
