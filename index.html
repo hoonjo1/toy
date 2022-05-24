@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
     <script defer src="./js/darkMode.js"></script>
-    <script defer src="./js/contents.js"></script>
+    <script defer src="./js/changePage.js"></script>
+    <script defer src="./js/content.js"></script>
   </head>
   <body data-theme="dark">
     <header>
@@ -28,7 +29,18 @@
     <main class="container">
       <div class="App" data-theme="dark">
         <section class="view-page frist-page">
-          <section calss="main-section"></section>
+          <section calss="main-section">
+            <div class="clock-box">
+              <div class="clock-box__clock">
+                <p class="clock"></p>
+              </div>
+              <div class="clock-box__box">
+                <p class="amPm"></p>
+                <p class="second"></p>
+              </div>
+            </div>
+            <p class="date"></p>
+          </section>
         </section>
         <section class="view-page second-page hidden">
           <section calss="main-section"></section>
@@ -38,8 +50,8 @@
         </section>
         <div class="section-btn">
           <button type="button" class="first-btn"></button>
-          <button type="button" class="second-btn"></button>
-          <button type="button" class="third-btn"></button>
+          <button type="button" class="second-btn opacity"></button>
+          <button type="button" class="third-btn opacity"></button>
         </div>
       </div>
     </main>

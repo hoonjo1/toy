@@ -1,4 +1,4 @@
-const change = (event) => {
+const changePage = () => {
   const fristBtn = document.querySelector(".first-btn");
   const secondBtn = document.querySelector(".second-btn");
   const thirdBtn = document.querySelector(".third-btn");
@@ -9,9 +9,13 @@ const change = (event) => {
 
   fristBtn.addEventListener("click", () => {
     if (fristPage.classList.contains("hidden")) {
+      fristPage.classList.remove("hidden");
       secondPage.classList.add("hidden");
       thirdPage.classList.add("hidden");
-      fristPage.classList.remove("hidden");
+
+      fristBtn.classList.remove("opacity");
+      secondBtn.classList.add("opacity");
+      thirdBtn.classList.add("opacity");
     }
   });
 
@@ -20,6 +24,10 @@ const change = (event) => {
       fristPage.classList.add("hidden");
       thirdPage.classList.add("hidden");
       secondPage.classList.remove("hidden");
+
+      fristBtn.classList.add("opacity");
+      secondBtn.classList.remove("opacity");
+      thirdBtn.classList.add("opacity");
     }
   });
 
@@ -28,8 +36,12 @@ const change = (event) => {
       fristPage.classList.add("hidden");
       secondPage.classList.add("hidden");
       thirdPage.classList.remove("hidden");
+
+      fristBtn.classList.add("opacity");
+      secondBtn.classList.add("opacity");
+      thirdBtn.classList.remove("opacity");
     }
   });
 };
 
-change();
+changePage();
