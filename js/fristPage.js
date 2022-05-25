@@ -1,5 +1,4 @@
 const fristPage = document.querySelector(".frist-page");
-const secondPage = document.querySelector(".second-page");
 const thirdPage = document.querySelector(".third-page");
 
 const fristContent = () => {
@@ -24,7 +23,5 @@ const fristContent = () => {
   dateNow.innerText = `${year}년 ${month}월 ${date}일 ${day}요일`;
   amPm.innerText = checkAmPm;
 };
-
 fristContent();
-
 setInterval(fristContent, 1000);

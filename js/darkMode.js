@@ -14,7 +14,7 @@ const switchingTheme = (isDark) => {
   if (!isDark) {
     delete body.dataset.theme;
     delete App.dataset.theme;
-    delete btn.dataset.theme;
+    delete back.dataset.theme;
     back.classList.remove("border-dark");
     back.classList.add("border-light");
     localStorage.setItem("mode", "light");
