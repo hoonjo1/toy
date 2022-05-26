@@ -1,11 +1,13 @@
-const API_KEY = "c3c494c6cb914ee42ed327cee309c1be";
+const WEATHER_API_KEY = "c3c494c6cb914ee42ed327cee309c1be";
+const AIR_API_KEY = "0ca3717b-5a24-40ae-a4d6-4501bce16682";
 const secondPage = document.querySelector(".second-page");
 
 function success(event) {
   const latitude = event.coords.latitude;
   const longitude = event.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
-  fetch(url)
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`;
+  const airUrl = `https://api.airvisual.com/v2/nearest_city?lat=${latitude}&lon=${longitude}&key=${AIR_API_KEY}`;
+  fetch(weatherUrl)
     .then((response) => response.json())
     .then((data) => {
       const weather = document.querySelector(".weather");
@@ -36,10 +38,31 @@ function success(event) {
       humidity.innerText = `${data.main.humidity}%`;
       name.innerText = `${data.name}, Korea`;
     });
+  fetch(airUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const aqiusI = document.querySelector(".aqius-i");
+      const aqius = document.querySelector(".aqius");
+      const aqiusS = document.querySelector(".aqius-s");
+      const aqiusT = document.querySelector(".aqius-t");
+      const value = data.data.current.pollution.aqius;
+      //   const value = 160; // TEST
+      if (value < 50) {
+        aqiusI.classList.add("far", "fa-grin");
+        aqiusT.innerText = "좋음";
+      } else if (50 < value && value < 100) {
+        aqiusI.classList.add("far", "fa-meh");
+        aqiusT.innerText = "보통";
+      } else if (100 < value) {
+        aqiusI.classList.add("far", "fa-tired");
+        aqiusT.innerText = "나쁨";
+      }
+      aqius.innerText = value;
+      aqiusS.innerText = "PM 2.5";
+    });
 }
 
 function error() {
   console.log("fail");
 }
-
 navigator.geolocation.getCurrentPosition(success, error);

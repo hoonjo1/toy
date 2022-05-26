@@ -106,7 +106,7 @@
 
 .weather {
   font-size: 90px;
-  margin: 20px;
+  margin: 15px;
 }
 
 .temp {
@@ -141,4 +141,29 @@
   margin-top: 25px;
   text-align: center;
   font-weight: 200;
+}
+
+.air-box {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aqius-i {
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.aqius-t {
+  margin-top: 40px;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.aqius-s {
+  font-size: 10px;
+  opacity: 0.7;
 }
