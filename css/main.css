@@ -16,11 +16,21 @@
   border: 1px solid #272b38;
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .view-page {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   top: 50%;
+  animation: fadein 1.5s;
 }
 
 .hidden {
