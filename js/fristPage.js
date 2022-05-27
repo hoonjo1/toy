@@ -1,5 +1,4 @@
 const fristPage = document.querySelector(".frist-page");
-const thirdPage = document.querySelector(".third-page");
 
 const fristContent = () => {
   const clock = document.querySelector(".clock");
